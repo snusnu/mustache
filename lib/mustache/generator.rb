@@ -107,7 +107,7 @@ class Mustache
           t.render(ctx.dup)
         else
           # Shortcut when passed non-array
-          v = [v] unless v.is_a?(Array) || defined?(Enumerator) && v.is_a?(Enumerator)
+          v = [v] unless v.is_a?(Enumerable) || defined?(Enumerator) && v.is_a?(Enumerator)
 
           v.map { |h| ctx.push(h); r = #{code}; ctx.pop; r }.join
         end

@@ -102,14 +102,14 @@ list, the HTML between the pound and slash will not be displayed.
 Template:
 
     Shown.
-    {{#nothin}}
+    {{#person}}
       Never shown!
-    {{/nothin}}
+    {{/person}}
 
 Hash:
 
     {
-      "person": true,
+      "person": false
     }
 
 Output:
@@ -138,7 +138,7 @@ Hash:
       "repo": [
         { "name": "resque" },
         { "name": "hub" },
-        { "name": "rip" },
+        { "name": "rip" }
       ]
     }
 
@@ -167,7 +167,7 @@ Hash:
     {
       "name": "Willy",
       "wrapped": function() {
-        return function(text) {
+        return function(text, render) {
           return "<b>" + render(text) + "</b>"
         }
       }
@@ -321,4 +321,4 @@ Original CTemplate by Google
 ## SEE ALSO
 
 mustache(1),
-<http://mustache.github.com/>
+<http://mustache.github.io/>
